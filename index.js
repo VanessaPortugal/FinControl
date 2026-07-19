@@ -1,5 +1,5 @@
-import { createAccount } from "./dados.js";
-import { deposit, withdraw, transfer} from "./conta.js";
+import { createAccount } from "./data.js";
+import { deposit, withdraw, transfer} from "./account.js";
 import { showHeader, showAccount , showHistory } from "./interface.js";
 
 let accountVanessa = createAccount("Vanessa");

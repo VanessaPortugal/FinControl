@@ -1,80 +1,161 @@
-# 💰 FinControl
+# 🇧🇷 FinControl
 
-Sistema bancário desenvolvido em JavaScript para praticar lógica de programação e conceitos fundamentais de desenvolvimento de software.
+Um sistema bancário desenvolvido em JavaScript com foco em aprendizado de lógica de programação, organização de código e boas práticas de desenvolvimento.
 
-O projeto simula operações bancárias como criação de contas, depósitos, saques, transferências e histórico de transações, evoluindo gradualmente com novas funcionalidades.
-
----
+O projeto está sendo construído de forma incremental, simulando funcionalidades de um banco real.
 
 ## 🚀 Funcionalidades
 
-- ✅ Criação automática de contas
-- ✅ Depósitos
-- ✅ Saques com validação de saldo
-- ✅ Transferências entre contas
+### Sprint 1
+- ✅ Criação de contas
+- ✅ Depósito
+- ✅ Saque
+- ✅ Transferência entre contas
 - ✅ Histórico de transações
 - ✅ Exibição das informações da conta
-- 🔄 Em desenvolvimento...
 
----
+### Sprint 2
+- ✅ Modularização do projeto
+- ✅ Separação em arquivos (`data.js`, `account.js`, `interface.js`)
+- ✅ Geração automática do número da conta
+- ✅ Cadastro automático de contas no banco
+- ✅ Busca de contas pelo número
+- ✅ Operações utilizando o número da conta
+- ✅ Consulta de informações da conta pelo número
+- ✅ Consulta do histórico pelo número
+- ✅ Padronização do código para inglês
 
-## 🛠️ Tecnologias utilizadas
+## 🗺️ Roadmap
 
-- JavaScript (ES6+)
-- Node.js
-- Git
-- GitHub
+### ✅ Concluído
 
----
+- Account creation
+- Automatic account number generation
+- Account lookup by account number
+- Deposit
+- Withdrawal
+- Transfer
+- Transaction history
+- Modular project structure
+
+### 🚧 Em desenvolvimento
+
+- Pix
+- Bill payment
+- Bank statement
+- Transaction reversal
+
+### 🔮 Planejado
+
+- Data persistence (JSON)
+- Database integration
+- User authentication
+- REST API
+- Web interface
 
 ## 📂 Estrutura do projeto
 
 ```
 FinControl/
 │
-├── index.js          # Arquivo principal
-├── dados.js          # Dados do banco e criação de contas
-├── conta.js          # Operações bancárias
-├── interface.js      # Exibição das informações
-└── README.md
+├── index.js
+├── data.js
+├── account.js
+├── interface.js
+├── README.md
+└── .gitignore
 ```
 
----
+## 🛠️ Tecnologias
 
-## 🎯 Objetivo do projeto
+- JavaScript (ES6 Modules)
+- Git
+- GitHub
 
-Este projeto faz parte do meu portfólio como desenvolvedora de software.
+## 🎯 Objetivo
 
-O objetivo é praticar:
+Este projeto faz parte da minha jornada para me tornar Desenvolvedora Full Stack.
 
-- Lógica de programação
-- Manipulação de objetos
-- Arrays
-- Funções
-- Modularização
-- Organização de projetos
-- Boas práticas de desenvolvimento
-
-Conforme meus estudos avançarem, novas funcionalidades serão implementadas.
+O objetivo é evoluir o sistema sprint após sprint, adicionando funcionalidades cada vez mais próximas de um sistema bancário real, enquanto aplico boas práticas de programação e organização de código.
 
 ---
 
-## 📌 Funcionalidades planejadas
+# 🇺🇸 FinControl
 
-- [ ] Cadastro de clientes
-- [ ] Consulta de contas por número
-- [ ] PIX
-- [ ] Extrato bancário
-- [ ] Persistência em arquivos
-- [ ] Banco de dados
-- [ ] Interface gráfica
-- [ ] API REST
+A banking system built with JavaScript to practice programming logic, clean code and software development fundamentals.
 
----
+The project is being developed incrementally, simulating features found in real banking systems.
 
-## 👩‍💻 Desenvolvido por
+## 🚀 Features
 
-Vanessa Portugal Sá Barreto Araújo
+### Sprint 1
+- ✅ Account creation
+- ✅ Deposit
+- ✅ Withdrawal
+- ✅ Money transfer
+- ✅ Transaction history
+- ✅ Account information display
 
-GitHub: https://github.com/VanessaPortugal
-LinkedIn: www.linkedin.com/in/vanessa-portugal-s-b-araujo
+### Sprint 2
+- ✅ Project modularization
+- ✅ Code separation into modules (`data.js`, `account.js`, `interface.js`)
+- ✅ Automatic account number generation
+- ✅ Automatic account registration
+- ✅ Account lookup by account number
+- ✅ Banking operations using the account number
+- ✅ Account information lookup by account number
+- ✅ Transaction history lookup by account number
+- ✅ Code standardized in English
+
+## 🗺️ Roadmap
+
+### ✅ Concluído
+
+- Account creation
+- Automatic account number generation
+- Account lookup by account number
+- Deposit
+- Withdrawal
+- Transfer
+- Transaction history
+- Modular project structure
+
+### 🚧 Em desenvolvimento
+
+- Pix
+- Bill payment
+- Bank statement
+- Transaction reversal
+
+### 🔮 Planejado
+
+- Data persistence (JSON)
+- Database integration
+- User authentication
+- REST API
+- Web interface
+
+## 📂 Project structure
+
+```
+FinControl/
+│
+├── index.js
+├── data.js
+├── account.js
+├── interface.js
+├── README.md
+└── .gitignore
+```
+
+## 🛠️ Technologies
+
+- JavaScript (ES6 Modules)
+- Git
+- GitHub
+
+## 🎯 Goal
+
+This project is part of my journey to become a Full Stack Developer.
+
+The goal is to improve the system sprint by sprint, adding features that make it increasingly similar to a real banking system while applying clean code principles and software engineering best practices.

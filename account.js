@@ -1,4 +1,4 @@
-import { findAccount } from "./dados.js";
+import { findAccount } from "./data.js";
 
 function deposit(accountNumber, amount) {
     let account = findAccount(accountNumber);

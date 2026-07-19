@@ -1,4 +1,6 @@
-  function showHeader() {
+ import { findAccount } from "./data.js";
+ 
+ function showHeader() {
     console.log(`
 ==========================
       FinControl
@@ -22,4 +24,22 @@ function showHistory(account) {
     }
 }
 
-export { showHeader, showAccount, showHistory };
+function showAccountByNumber(accountNumber) {
+    let account = findAccount(accountNumber);
+    if (account) {
+        showAccount(account);
+    } else {
+        console.log("Conta não encontrada.");
+    }
+}
+
+function showHistoryByNumber(accountNumber) {
+    let account = findAccount(accountNumber);
+    if (account) {
+        showHistory(account);
+    } else {
+        console.log("Conta não encontrada.");
+    }
+}
+
+export { showHeader, showAccount, showHistory, showAccountByNumber, showHistoryByNumber };
