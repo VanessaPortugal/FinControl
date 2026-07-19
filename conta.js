@@ -1,35 +1,52 @@
+import { findAccount } from "./dados.js";
 
- function depositar(conta,valor) {
-    if (valor > 0) {
-        console.log(`Depósito de R$${valor} realizado com sucesso!`);
-         conta.saldo += valor;
-         conta.historico.push(`Depósito de R$${valor} realizado com sucesso!`); 
+function deposit(accountNumber, amount) {
+    let account = findAccount(accountNumber);
+
+    if (account === null) {
+        console.log("Conta não encontrada.");
+    } else if (amount <= 0) {
+        console.log("Valor inválido para depósito.");
     } else {
-            console.log("Valor inválido para depósito.");  
+        account.balance += amount;
+        account.history.push(`Depósito de R$${amount} realizado com sucesso!`);
+        console.log(`Depósito de R$${amount} realizado com sucesso!`);
     }
 }
-function sacar(conta,valor) {
-        if (valor > 0 && valor <= conta.saldo) {
-        console.log(`Saque de R$${valor} realizado com sucesso!`);
-         conta.saldo -= valor;
-         conta.historico.push(`Saque de R$${valor} realizado com sucesso!`);
-    } else {
-        console.log(`Não foi possível realizar o saque.
-            Saldo insuficiente no momento`);
+function withdraw(accountNumber, amount) {
+        let account = findAccount(accountNumber);
+        if (account === null) {
+            console.log("Conta não encontrada.");
+        } else if (amount <= 0) {
+            console.log("Valor inválido para saque.");
+        } else if (amount > account.balance) {
+            console.log("Saldo insuficiente para saque.");
+        } else {
+            account.balance -= amount;
+            account.history.push(`Saque de R$${amount} realizado com sucesso!`);
+            console.log(`Saque de R$${amount} realizado com sucesso!`);
+        }
     }
-}
-
-function transferir(contaOrigem, contaDestino, valor) {
-    if (valor > 0 && valor <= contaOrigem.saldo) {
-        contaOrigem.saldo -= valor;
-        contaDestino.saldo += valor;
-        contaOrigem.historico.push(`Transferência de R$${valor} para ${contaDestino.nomeDoTitular} realizada com sucesso!`);
-        contaDestino.historico.push(`Recebimento de R$${valor} de ${contaOrigem.nomeDoTitular} realizado com sucesso!`);
-        console.log(`Transferência de R$${valor} realizada com sucesso!`);
+function transfer(accountNumberOrigin, accountNumberDestination, amount) {
+    let sourceAccount = findAccount(accountNumberOrigin);
+    let destinationAccount = findAccount(accountNumberDestination);
+    if (sourceAccount === null) {
+        console.log("Conta de origem não encontrada.");
+    } else if (amount <= 0) {
+        console.log("Valor inválido para transferência.");
+    } else if (amount > sourceAccount.balance) {
+        console.log("Saldo insuficiente para transferência.");
     } else {
-        console.log(`Não foi possível realizar a transferência. 
-            Saldo insuficiente ou valor inválido.`);
+        if (destinationAccount === null) {
+            console.log("Conta de destino não encontrada.");
+        } else {
+            sourceAccount.balance -= amount;
+            destinationAccount.balance += amount;
+            sourceAccount.history.push(`Transferência de R$${amount} para ${destinationAccount.holderName} realizada com sucesso!`);
+            destinationAccount.history.push(`Recebimento de R$${amount} de ${sourceAccount.holderName} realizado com sucesso!`);
+            console.log(`Transferência de R$${amount} realizada com sucesso!`);
+        }
     }
  }
 
-export { depositar, sacar, transferir };
+export { deposit, withdraw, transfer };

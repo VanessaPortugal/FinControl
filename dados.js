@@ -1,27 +1,33 @@
-const banco = {
-    nome: "FinControl",
-    agenciaPadrao: "0001",
-    proximoNumeroDaConta: 1000,
-    contas: [],
+const bank = {
+    name: "FinControl",
+    defaultBranch: "0001",
+    nextAccountNumber: 1000,
+    accounts: [],
 };
 
-export { banco };
-
-function criarConta(nomeDoTitular) {
-    let novaConta = {
-        banco: banco.nome,
-        agencia: banco.agenciaPadrao,
-        nomeDoTitular,
-        numeroDaConta: banco.proximoNumeroDaConta,
-        saldo: 0,
-        historico: [],
+function createAccount(holderName) {
+    let newAccount = {
+        bank: bank.name,
+        branch: bank.defaultBranch,
+        holderName: holderName,
+        accountNumber: bank.nextAccountNumber,
+        balance: 0,
+        history: [],
     };
 
-    banco.contas.push(novaConta);
-    banco.proximoNumeroDaConta++;
-    
-    return novaConta;
+    bank.accounts.push(newAccount);
+    bank.nextAccountNumber++;
+
+    return newAccount;
 }
 
+function findAccount(accountNumber) {
+    for (let i = 0; i < bank.accounts.length; i++) {
+        if (bank.accounts[i].accountNumber === accountNumber) {
+            return bank.accounts[i];
+        }
+    }
+    return null;
+}
 
-export { criarConta };
+export { bank, createAccount, findAccount };

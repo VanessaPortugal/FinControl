@@ -1,19 +1,22 @@
-import { banco, criarConta } from "./dados.js";
-import { depositar, sacar, transferir} from "./conta.js";
-import { mostrarHistorico, mostrarCabecalho, mostrarConta } from "./interface.js";
+import { createAccount } from "./dados.js";
+import { deposit, withdraw, transfer} from "./conta.js";
+import { showHeader, showAccount , showHistory } from "./interface.js";
 
-let conta = criarConta("Vanessa");
-let conta2 = criarConta("Breno");
+let accountVanessa = createAccount("Vanessa");
+let accountBreno = createAccount("Breno");
 
-depositar(conta, 1000);
-transferir(conta, conta2, 100);
-depositar(conta, 500);
-sacar(conta, 20);
+deposit(accountVanessa.accountNumber, 500);
 
-mostrarCabecalho();
+transfer(
+    accountVanessa.accountNumber,
+    accountBreno.accountNumber,
+    200
+);
 
-mostrarConta(conta);
-mostrarHistorico(conta);
+showHeader();
 
-mostrarConta(conta2);
-mostrarHistorico(conta2);
+showAccount(accountVanessa);
+showHistory(accountVanessa);
+
+showAccount(accountBreno);
+showHistory(accountBreno);

@@ -1,4 +1,4 @@
-  function mostrarCabecalho() {
+  function showHeader() {
     console.log(`
 ==========================
       FinControl
@@ -6,20 +6,20 @@
 `);
 }
 
-function mostrarConta(conta) {
+function showAccount(account) {
     console.log(`
-    Titular: ${conta.nomeDoTitular}
-    Número da conta: ${conta.numeroDaConta}
-    Saldo: R$${conta.saldo}
+    Titular: ${account.holderName}
+    Número da conta: ${account.accountNumber}
+    Saldo: R$${account.balance}
     `);
  }
 
-function mostrarHistorico(conta) {
+function showHistory(account) {
     console.log("================= Histórico ================= "); 
-    for (let i = 0; i < conta.historico.length; i++) {
-        console.log(`${i + 1}. ${conta.historico[i]}
+    for (let i = 0; i < account.history.length; i++) {
+        console.log(`${i + 1}. ${account.history[i]}
 ============================================`);
     }
 }
 
-export {mostrarHistorico, mostrarCabecalho, mostrarConta };
+export { showHeader, showAccount, showHistory };
