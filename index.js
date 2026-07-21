@@ -1,13 +1,13 @@
 import { createAccount, findAccount } from "./data.js";
-import { deposit, withdraw, transfer} from "./account.js";
-import { showHeader, showAccount , showHistory } from "./interface.js";
+import { deposit, withdraw, transfer } from "./account.js";
+import { showHeader, showAccount, showHistory } from "./interface.js";
 
 import readline from "node:readline/promises";
-import { stdin as input, stdout as output } from "node:process"; 
+import { stdin as input, stdout as output } from "node:process";
 
 const rl = readline.createInterface({
-    input, 
-    output 
+    input,
+    output
 });
 
 async function main() {
@@ -34,20 +34,20 @@ async function main() {
         `);
 
         if (option === "1") {
-        
-        let accountNumber = await rl.question("Digite o número da conta: ");
 
-        accountNumber = parseInt(accountNumber);
+            let accountNumber = await rl.question("Digite o número da conta: ");
 
-        let account = findAccount(accountNumber);
-        if (account === null) {
-            console.log("Conta não encontrada.");
-        } else {
+            accountNumber = parseInt(accountNumber);
 
-        console.log(`Bem-vindo(a), ${account.holderName}!`);
+            let account = findAccount(accountNumber);
+            if (account === null) {
+                console.log("Conta não encontrada.");
+            } else {
 
-        while (true) {
-         let accountOption = await rl.question(`
+                console.log(`Bem-vindo(a), ${account.holderName}!`);
+
+                while (true) {
+                    let accountOption = await rl.question(`
     ==========================
         Bem-vindo(a), ${account.holderName}
         Conta: ${account.accountNumber}
@@ -62,46 +62,51 @@ async function main() {
 
         Escolha uma opção:
 `);
-        if (accountOption === "1"){
+                    if (accountOption === "1") {
+                        let amount = await rl.question("Digite o valor do depósito: R$");
 
-    console.log("Você escolheu depositar.");
+                        amount = parseFloat(amount);
 
-} else if (accountOption === "2") {
+                        deposit(account.accountNumber, amount);
+                    } else if (accountOption === "2") {
+                        let withdrawAmount = await rl.question("Digite o valor do saque: R$")
 
-    console.log("Você escolheu sacar.");
+                        withdrawAmount = parseFloat(withdrawAmount);
+                        withdraw(account.accountNumber, withdrawAmount)
+                    } else if (accountOption === "3") {
+                        let destinationAccount = await rl.question("Digite a conta que receberá o valor:");
+                        destinationAccount = parseInt(destinationAccount);
 
-} else if (accountOption === "3") {
+                        let transferAmount = await rl.question("Digite o valor da transferência: R$");
 
-    console.log("Você escolheu transferir.");
+                        transferAmount = parseFloat(transferAmount);
 
-} else if (accountOption === "4") {
+                        transfer(account.accountNumber, destinationAccount, transferAmount);
 
-    console.log("Você escolheu consultar conta.");
+                    } else if (accountOption === "4") {
+                        showAccount(account);
+                    } else if (accountOption === "5") {
+                        showHistory(account);
+                    } else if (accountOption === "6") {
 
-} else if (accountOption === "5") {
+                        console.log("Logout realizado.");
+                        break;
 
-    console.log("Você escolheu consultar histórico.");
+                    } else {
 
-} else if (accountOption === "6") {
+                        console.log("Opção inválida.");
 
-    console.log("Logout realizado.");
-    break;
+                    }
+                }
 
-} else {
+            }
+        } else if (option === "2") {
 
-    console.log("Opção inválida.");
+            let holderName = await rl.question("Digite o nome do titular da conta: ");
 
-}
-        }
+            let newAccount = createAccount(holderName);
 
-    }
-    } else if (option === "2") {
-
-    let holderName = await rl.question("Digite o nome do titular da conta: ");
-
-    let newAccount = createAccount(holderName);
-
-    console.log(`
+            console.log(`
     ==========================
         Conta criada com sucesso!
     ==========================
@@ -112,42 +117,20 @@ async function main() {
         Titular: ${newAccount.holderName}
         Saldo inicial: R$${newAccount.balance}
         `);
-}  else if (option === "0") {
+        } else if (option === "0") {
 
-        console.log("Encerrando o FinControl...");
-        break;
+            console.log("Encerrando o FinControl...");
+            break;
 
         } else {
 
-        console.log("Opção inválida.");
+            console.log("Opção inválida.");
 
         }
 
     }
 
-    rl.close();   // ← aqui
+    rl.close();
 }
 
 main();
-
-
-/*BLOCO DE TESTES
-let accountVanessa = createAccount("Vanessa");
-let accountBreno = createAccount("Breno");
-
-deposit(accountVanessa.accountNumber, 500);
-
-transfer(
-    accountVanessa.accountNumber,
-    accountBreno.accountNumber,
-    200
-);
-
-showHeader();
-
-showAccount(accountVanessa);
-showHistory(accountVanessa);
-
-showAccount(accountBreno);
-showHistory(accountBreno);  
-*/

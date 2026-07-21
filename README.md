@@ -1,12 +1,14 @@
-# 🇧🇷 FinControl
+# FinControl
 
-Um sistema bancário desenvolvido em JavaScript com foco no aprendizado de lógica de programação, estrutura de dados, modularização e boas práticas de Engenharia de Software.
+Sistema bancário desenvolvido em JavaScript para praticar lógica de programação, modularização, estrutura de dados e fundamentos de Engenharia de Software.
 
-O projeto está sendo desenvolvido de forma incremental utilizando Sprints, simulando a evolução de um sistema bancário real.
+O projeto evolui de forma incremental por meio de Sprints, simulando o desenvolvimento gradual de um sistema bancário.
 
 ---
 
-## 🚀 Funcionalidades
+# 🇧🇷 Português
+
+## 🚀 Funcionalidades atuais
 
 ### ✅ Sprint 1 — Sistema Bancário Básico
 
@@ -17,78 +19,51 @@ O projeto está sendo desenvolvido de forma incremental utilizando Sprints, simu
 - Histórico de transações
 - Consulta das informações da conta
 
-### ✅ Sprint 2 — Organização e Navegação
+### ✅ Sprint 2 — Modularização e Interface de Terminal
 
-- Modularização do projeto
-- Separação da lógica em módulos
-- Numeração automática das contas
-- Cadastro automático de novas contas
+- Separação do projeto em módulos
+- Geração automática do número da conta
+- Cadastro automático das contas
 - Busca de contas pelo número
-- Operações utilizando apenas o número da conta
-- Consulta de conta pelo número
-- Consulta de histórico pelo número
-- Padronização do código para inglês
-- Interface interativa via terminal
-- Menu principal
-- Menu da conta após login
-- Login utilizando número da conta
+- Login utilizando o número da conta
+- Menu principal interativo
+- Menu da conta autenticada
+- Depósito pelo menu
+- Saque pelo menu
+- Transferência pelo menu
+- Consulta das informações da conta
+- Consulta do histórico de transações
+- Validação de conta inexistente
+- Validação de saldo insuficiente
 - Logout
+- Encerramento do sistema
+- Padronização do código em inglês
 
 ---
 
-## 🗺️ Roadmap
+## ▶️ Como executar
 
-### ✅ Sprint 1 — Basic Banking System
+### Pré-requisito
 
-- Account creation
-- Deposit
-- Withdrawal
-- Transfer
-- Transaction history
+Tenha o [Node.js](https://nodejs.org/) instalado.
 
-### ✅ Sprint 2 — Project Organization
+### Clone o repositório
 
-- Modular architecture
-- Account lookup
-- Automatic account numbering
-- Interactive terminal menu
-- Account login
-- Account menu
-- Logout
-- Code refactoring
+```bash
+git clone https://github.com/VanessaPortugal/FinControl.git
+```
 
-### 🚧 Sprint 3 — Banking Operations
+### Entre na pasta do projeto
 
-- Pix
-- Bill payment
-- Bank statement
-- Transaction validation
-- List all accounts
+```bash
+cd FinControl
+```
 
-### 🚧 Sprint 4 — Persistence
+### Execute o sistema
 
-- Save data in JSON
-- Automatic data loading
-
-### 🔮 Sprint 5 — Database
-
-- SQLite/MySQL integration
-
-### 🔮 Sprint 6 — Authentication
-
-- Password
-- CPF validation
-- Account lock
-
-### 🔮 Sprint 7 — REST API
-
-- Node.js API
-- CRUD operations
-
-### 🔮 Sprint 8 — Front-end
-
-- Web interface
-- Responsive layout
+```bash
+node index.js
+```
 
 ---
 
@@ -97,19 +72,94 @@ O projeto está sendo desenvolvido de forma incremental utilizando Sprints, simu
 ```text
 FinControl/
 │
-├── index.js
-├── data.js
 ├── account.js
+├── assets.js
+├── data.js
+├── index.js
 ├── interface.js
-├── README.md
-└── .gitignore
+├── .gitignore
+├── LICENSE
+└── README.md
 ```
+
+### Responsabilidade dos principais arquivos
+
+- `index.js`: controla o fluxo do programa e os menus.
+- `data.js`: armazena e localiza as contas.
+- `account.js`: contém as operações bancárias.
+- `interface.js`: exibe as informações e o histórico.
+- `assets.js`: contém elementos auxiliares utilizados pelo sistema.
+
+---
+
+## ⚠️ Limitação atual
+
+As contas e transações são armazenadas apenas na memória durante a execução.
+
+Ao encerrar o programa, os dados são apagados. A persistência em arquivo JSON será implementada em uma Sprint futura.
+
+---
+
+## 🗺️ Roadmap
+
+### ✅ Sprint 1 — Sistema Bancário Básico
+
+- Operações bancárias fundamentais
+- Criação e consulta de contas
+- Histórico de transações
+
+### ✅ Sprint 2 — Modularização e Navegação
+
+- Arquitetura modular
+- Interface interativa no terminal
+- Login por número da conta
+- Integração das operações com o menu
+- Logout e encerramento do sistema
+
+### 🔮 Sprint 3 — Novas Operações Bancárias
+
+- Pix
+- Pagamento de contas
+- Extrato bancário
+- Estorno de transações
+- Listagem de contas
+- Novas validações de entrada
+
+### 🔮 Sprint 4 — Persistência de Dados
+
+- Salvamento das contas em JSON
+- Carregamento automático dos dados
+- Preservação das transações após o encerramento
+
+### 🔮 Sprint 5 — Banco de Dados
+
+- Integração com SQLite, MySQL ou PostgreSQL
+
+### 🔮 Sprint 6 — Autenticação
+
+- Senha de acesso
+- Validação de CPF
+- Bloqueio após tentativas incorretas
+- Armazenamento seguro de senha
+
+### 🔮 Sprint 7 — API REST
+
+- API com Node.js
+- Operações CRUD
+- Autenticação da API
+
+### 🔮 Sprint 8 — Interface Web
+
+- Interface responsiva
+- Integração com a API
+- Painel da conta
 
 ---
 
 ## 🛠️ Tecnologias
 
-- JavaScript (ES Modules)
+- JavaScript
+- ES Modules
 - Node.js
 - Git
 - GitHub
@@ -120,19 +170,19 @@ FinControl/
 
 Este projeto faz parte da minha jornada para me tornar Desenvolvedora Full Stack.
 
-A proposta é evoluir o sistema sprint após sprint, adicionando funcionalidades presentes em bancos reais enquanto pratico arquitetura de software, organização de código e boas práticas de desenvolvimento.
+A proposta é evoluir o sistema Sprint após Sprint enquanto pratico lógica de programação, organização de código, arquitetura de software, testes e boas práticas de desenvolvimento.
 
 ---
 
-# 🇺🇸 FinControl
+## 📄 Licença
 
-A banking system built with JavaScript to practice programming logic, software architecture and clean code principles.
-
-The project is being developed incrementally using Sprints, simulating the evolution of a real banking system.
+Este projeto está licenciado sob a licença MIT. Consulte o arquivo `LICENSE` para mais informações.
 
 ---
 
-## 🚀 Features
+# 🇺🇸 English
+
+## 🚀 Current Features
 
 ### ✅ Sprint 1 — Basic Banking System
 
@@ -141,79 +191,53 @@ The project is being developed incrementally using Sprints, simulating the evolu
 - Withdrawal
 - Money transfer
 - Transaction history
-- Account information
+- Account information lookup
 
-### ✅ Sprint 2 — Project Organization
+### ✅ Sprint 2 — Modularization and Terminal Interface
 
-- Modular architecture
-- Automatic account numbering
+- Project separation into modules
+- Automatic account number generation
 - Automatic account registration
-- Account lookup
-- Banking operations using the account number
+- Account lookup by account number
+- Login using the account number
+- Interactive main menu
+- Authenticated account menu
+- Deposit through the menu
+- Withdrawal through the menu
+- Transfer through the menu
 - Account information lookup
 - Transaction history lookup
-- Interactive terminal interface
-- Main menu
-- Account menu
-- Login using account number
+- Nonexistent account validation
+- Insufficient balance validation
 - Logout
+- System shutdown
 - Code standardized in English
 
 ---
 
-## 🗺️ Roadmap
+## ▶️ How to Run
 
-### ✅ Sprint 1 — Basic Banking System
+### Requirement
 
-- Account creation
-- Deposit
-- Withdrawal
-- Transfer
-- Transaction history
+Make sure [Node.js](https://nodejs.org/) is installed.
 
-### ✅ Sprint 2 — Project Organization
+### Clone the repository
 
-- Modular architecture
-- Account lookup
-- Automatic account numbering
-- Interactive terminal menu
-- Account login
-- Account menu
-- Logout
-- Code refactoring
+```bash
+git clone https://github.com/VanessaPortugal/FinControl.git
+```
 
-### 🚧 Sprint 3 — Banking Operations
+### Enter the project directory
 
-- Pix
-- Bill payment
-- Bank statement
-- Transaction validation
-- List all accounts
+```bash
+cd FinControl
+```
 
-### 🚧 Sprint 4 — Persistence
+### Run the application
 
-- Save data into JSON
-- Automatic data loading
-
-### 🔮 Sprint 5 — Database
-
-- SQLite/MySQL integration
-
-### 🔮 Sprint 6 — Authentication
-
-- Password
-- CPF validation
-- Account locking
-
-### 🔮 Sprint 7 — REST API
-
-- Node.js REST API
-- CRUD operations
-
-### 🔮 Sprint 8 — Front-end
-
-- Web interface
-- Responsive design
+```bash
+node index.js
+```
 
 ---
 
@@ -222,19 +246,94 @@ The project is being developed incrementally using Sprints, simulating the evolu
 ```text
 FinControl/
 │
-├── index.js
-├── data.js
 ├── account.js
+├── assets.js
+├── data.js
+├── index.js
 ├── interface.js
-├── README.md
-└── .gitignore
+├── .gitignore
+├── LICENSE
+└── README.md
 ```
+
+### Main file responsibilities
+
+- `index.js`: controls the application flow and menus.
+- `data.js`: stores and searches for accounts.
+- `account.js`: contains the banking operations.
+- `interface.js`: displays account information and transaction history.
+- `assets.js`: contains auxiliary elements used by the application.
+
+---
+
+## ⚠️ Current Limitation
+
+Accounts and transactions are currently stored only in memory while the application is running.
+
+When the application is closed, all data is lost. JSON data persistence will be implemented in a future Sprint.
+
+---
+
+## 🗺️ Roadmap
+
+### ✅ Sprint 1 — Basic Banking System
+
+- Basic banking operations
+- Account creation and lookup
+- Transaction history
+
+### ✅ Sprint 2 — Modularization and Navigation
+
+- Modular architecture
+- Interactive terminal interface
+- Login using the account number
+- Banking operations integrated with the menu
+- Logout and system shutdown
+
+### 🔮 Sprint 3 — New Banking Operations
+
+- Pix
+- Bill payment
+- Bank statement
+- Transaction reversal
+- Account listing
+- Additional input validations
+
+### 🔮 Sprint 4 — Data Persistence
+
+- Save accounts into JSON
+- Automatically load saved data
+- Preserve transactions after closing the application
+
+### 🔮 Sprint 5 — Database
+
+- SQLite, MySQL or PostgreSQL integration
+
+### 🔮 Sprint 6 — Authentication
+
+- Account password
+- CPF validation
+- Account locking after failed attempts
+- Secure password storage
+
+### 🔮 Sprint 7 — REST API
+
+- Node.js REST API
+- CRUD operations
+- API authentication
+
+### 🔮 Sprint 8 — Web Interface
+
+- Responsive interface
+- API integration
+- Account dashboard
 
 ---
 
 ## 🛠️ Technologies
 
-- JavaScript (ES Modules)
+- JavaScript
+- ES Modules
 - Node.js
 - Git
 - GitHub
@@ -245,24 +344,10 @@ FinControl/
 
 This project is part of my journey to become a Full Stack Developer.
 
-The goal is to improve the system sprint by sprint, adding real-world banking features while applying software engineering principles, clean code and scalable architecture.
+The goal is to improve the system Sprint by Sprint while practicing programming logic, code organization, software architecture, testing and development best practices.
 
-## ▶️ Como executar
+---
 
-Clone o repositório:
+## 📄 License
 
-```bash
-git clone https://github.com/VanessaPortugal/FinControl.git
-```
-
-Entre na pasta:
-
-```bash
-cd FinControl
-```
-
-Execute o projeto:
-
-```bash
-node index.js
-```
+This project is licensed under the MIT License. See the `LICENSE` file for more information.
