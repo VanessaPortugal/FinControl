@@ -246,3 +246,23 @@ FinControl/
 This project is part of my journey to become a Full Stack Developer.
 
 The goal is to improve the system sprint by sprint, adding real-world banking features while applying software engineering principles, clean code and scalable architecture.
+
+## ▶️ Como executar
+
+Clone o repositório:
+
+```bash
+git clone https://github.com/VanessaPortugal/FinControl.git
+```
+
+Entre na pasta:
+
+```bash
+cd FinControl
+```
+
+Execute o projeto:
+
+```bash
+node index.js
+```
