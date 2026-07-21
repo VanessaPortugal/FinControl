@@ -1,61 +1,100 @@
 # 🇧🇷 FinControl
 
-Um sistema bancário desenvolvido em JavaScript com foco em aprendizado de lógica de programação, organização de código e boas práticas de desenvolvimento.
+Um sistema bancário desenvolvido em JavaScript com foco no aprendizado de lógica de programação, estrutura de dados, modularização e boas práticas de Engenharia de Software.
 
-O projeto está sendo construído de forma incremental, simulando funcionalidades de um banco real.
+O projeto está sendo desenvolvido de forma incremental utilizando Sprints, simulando a evolução de um sistema bancário real.
+
+---
 
 ## 🚀 Funcionalidades
 
-### Sprint 1
-- ✅ Criação de contas
-- ✅ Depósito
-- ✅ Saque
-- ✅ Transferência entre contas
-- ✅ Histórico de transações
-- ✅ Exibição das informações da conta
+### ✅ Sprint 1 — Sistema Bancário Básico
 
-### Sprint 2
-- ✅ Modularização do projeto
-- ✅ Separação em arquivos (`data.js`, `account.js`, `interface.js`)
-- ✅ Geração automática do número da conta
-- ✅ Cadastro automático de contas no banco
-- ✅ Busca de contas pelo número
-- ✅ Operações utilizando o número da conta
-- ✅ Consulta de informações da conta pelo número
-- ✅ Consulta do histórico pelo número
-- ✅ Padronização do código para inglês
+- Criação de contas
+- Depósito
+- Saque
+- Transferência entre contas
+- Histórico de transações
+- Consulta das informações da conta
+
+### ✅ Sprint 2 — Organização e Navegação
+
+- Modularização do projeto
+- Separação da lógica em módulos
+- Numeração automática das contas
+- Cadastro automático de novas contas
+- Busca de contas pelo número
+- Operações utilizando apenas o número da conta
+- Consulta de conta pelo número
+- Consulta de histórico pelo número
+- Padronização do código para inglês
+- Interface interativa via terminal
+- Menu principal
+- Menu da conta após login
+- Login utilizando número da conta
+- Logout
+
+---
 
 ## 🗺️ Roadmap
 
-### ✅ Concluído
+### ✅ Sprint 1 — Basic Banking System
 
 - Account creation
-- Automatic account number generation
-- Account lookup by account number
 - Deposit
 - Withdrawal
 - Transfer
 - Transaction history
-- Modular project structure
 
-### 🚧 Em desenvolvimento
+### ✅ Sprint 2 — Project Organization
+
+- Modular architecture
+- Account lookup
+- Automatic account numbering
+- Interactive terminal menu
+- Account login
+- Account menu
+- Logout
+- Code refactoring
+
+### 🚧 Sprint 3 — Banking Operations
 
 - Pix
 - Bill payment
 - Bank statement
-- Transaction reversal
+- Transaction validation
+- List all accounts
 
-### 🔮 Planejado
+### 🚧 Sprint 4 — Persistence
 
-- Data persistence (JSON)
-- Database integration
-- User authentication
-- REST API
+- Save data in JSON
+- Automatic data loading
+
+### 🔮 Sprint 5 — Database
+
+- SQLite/MySQL integration
+
+### 🔮 Sprint 6 — Authentication
+
+- Password
+- CPF validation
+- Account lock
+
+### 🔮 Sprint 7 — REST API
+
+- Node.js API
+- CRUD operations
+
+### 🔮 Sprint 8 — Front-end
+
 - Web interface
+- Responsive layout
+
+---
 
 ## 📂 Estrutura do projeto
 
-```
+```text
 FinControl/
 │
 ├── index.js
@@ -66,78 +105,121 @@ FinControl/
 └── .gitignore
 ```
 
+---
+
 ## 🛠️ Tecnologias
 
-- JavaScript (ES6 Modules)
+- JavaScript (ES Modules)
+- Node.js
 - Git
 - GitHub
+
+---
 
 ## 🎯 Objetivo
 
 Este projeto faz parte da minha jornada para me tornar Desenvolvedora Full Stack.
 
-O objetivo é evoluir o sistema sprint após sprint, adicionando funcionalidades cada vez mais próximas de um sistema bancário real, enquanto aplico boas práticas de programação e organização de código.
+A proposta é evoluir o sistema sprint após sprint, adicionando funcionalidades presentes em bancos reais enquanto pratico arquitetura de software, organização de código e boas práticas de desenvolvimento.
 
 ---
 
 # 🇺🇸 FinControl
 
-A banking system built with JavaScript to practice programming logic, clean code and software development fundamentals.
+A banking system built with JavaScript to practice programming logic, software architecture and clean code principles.
 
-The project is being developed incrementally, simulating features found in real banking systems.
+The project is being developed incrementally using Sprints, simulating the evolution of a real banking system.
+
+---
 
 ## 🚀 Features
 
-### Sprint 1
-- ✅ Account creation
-- ✅ Deposit
-- ✅ Withdrawal
-- ✅ Money transfer
-- ✅ Transaction history
-- ✅ Account information display
+### ✅ Sprint 1 — Basic Banking System
 
-### Sprint 2
-- ✅ Project modularization
-- ✅ Code separation into modules (`data.js`, `account.js`, `interface.js`)
-- ✅ Automatic account number generation
-- ✅ Automatic account registration
-- ✅ Account lookup by account number
-- ✅ Banking operations using the account number
-- ✅ Account information lookup by account number
-- ✅ Transaction history lookup by account number
-- ✅ Code standardized in English
+- Account creation
+- Deposit
+- Withdrawal
+- Money transfer
+- Transaction history
+- Account information
+
+### ✅ Sprint 2 — Project Organization
+
+- Modular architecture
+- Automatic account numbering
+- Automatic account registration
+- Account lookup
+- Banking operations using the account number
+- Account information lookup
+- Transaction history lookup
+- Interactive terminal interface
+- Main menu
+- Account menu
+- Login using account number
+- Logout
+- Code standardized in English
+
+---
 
 ## 🗺️ Roadmap
 
-### ✅ Concluído
+### ✅ Sprint 1 — Basic Banking System
 
 - Account creation
-- Automatic account number generation
-- Account lookup by account number
 - Deposit
 - Withdrawal
 - Transfer
 - Transaction history
-- Modular project structure
 
-### 🚧 Em desenvolvimento
+### ✅ Sprint 2 — Project Organization
+
+- Modular architecture
+- Account lookup
+- Automatic account numbering
+- Interactive terminal menu
+- Account login
+- Account menu
+- Logout
+- Code refactoring
+
+### 🚧 Sprint 3 — Banking Operations
 
 - Pix
 - Bill payment
 - Bank statement
-- Transaction reversal
+- Transaction validation
+- List all accounts
 
-### 🔮 Planejado
+### 🚧 Sprint 4 — Persistence
 
-- Data persistence (JSON)
-- Database integration
-- User authentication
-- REST API
+- Save data into JSON
+- Automatic data loading
+
+### 🔮 Sprint 5 — Database
+
+- SQLite/MySQL integration
+
+### 🔮 Sprint 6 — Authentication
+
+- Password
+- CPF validation
+- Account locking
+
+### 🔮 Sprint 7 — REST API
+
+- Node.js REST API
+- CRUD operations
+
+### 🔮 Sprint 8 — Front-end
+
 - Web interface
+- Responsive design
 
-## 📂 Project structure
+---
 
-```
+## 📂 Project Structure
+
+```text
 FinControl/
 │
 ├── index.js
@@ -148,14 +230,19 @@ FinControl/
 └── .gitignore
 ```
 
+---
+
 ## 🛠️ Technologies
 
-- JavaScript (ES6 Modules)
+- JavaScript (ES Modules)
+- Node.js
 - Git
 - GitHub
+
+---
 
 ## 🎯 Goal
 
 This project is part of my journey to become a Full Stack Developer.
 
-The goal is to improve the system sprint by sprint, adding features that make it increasingly similar to a real banking system while applying clean code principles and software engineering best practices.
+The goal is to improve the system sprint by sprint, adding real-world banking features while applying software engineering principles, clean code and scalable architecture.

@@ -42,4 +42,24 @@ function showHistoryByNumber(accountNumber) {
     }
 }
 
-export { showHeader, showAccount, showHistory, showAccountByNumber, showHistoryByNumber };
+function showMenu() {
+    console.log(`
+==========================
+         MENU
+==========================
+
+1. Criar conta
+2. Depositar
+3. Sacar
+4. Transferir
+5. Consultar conta
+6. Consultar histórico
+7. Listar contas
+
+0. Sair
+
+==========================
+`);
+}
+
+export { showHeader, showAccount, showHistory, showAccountByNumber, showHistoryByNumber, showMenu };
