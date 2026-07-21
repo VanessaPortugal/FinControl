@@ -88,7 +88,7 @@ FinControl/
 - `data.js`: armazena e localiza as contas.
 - `account.js`: contém as operações bancárias.
 - `interface.js`: exibe as informações e o histórico.
-- `assets.js`: contém elementos auxiliares utilizados pelo sistema.
+- `assets.js`: arquivo reservado para futuros recursos auxiliares do sistema.
 
 ---
 
@@ -262,7 +262,7 @@ FinControl/
 - `data.js`: stores and searches for accounts.
 - `account.js`: contains the banking operations.
 - `interface.js`: displays account information and transaction history.
-- `assets.js`: contains auxiliary elements used by the application.
+- `assets.js`: File reserved for future system auxiliary resources.
 
 ---
 
