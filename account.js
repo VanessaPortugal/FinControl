@@ -5,8 +5,10 @@ function deposit(accountNumber, amount) {
 
     if (account === null) {
         console.log("Conta não encontrada.");
-    } else if (amount <= 0) {
+    } else if (!Number.isFinite(amount) || amount <= 0) {
+
         console.log("Valor inválido para depósito.");
+        return;
     } else {
         account.balance += amount;
         account.history.push(`Depósito de R$${amount} realizado com sucesso!`);
@@ -14,26 +16,28 @@ function deposit(accountNumber, amount) {
     }
 }
 function withdraw(accountNumber, amount) {
-        let account = findAccount(accountNumber);
-        if (account === null) {
-            console.log("Conta não encontrada.");
-        } else if (amount <= 0) {
-            console.log("Valor inválido para saque.");
-        } else if (amount > account.balance) {
-            console.log("Saldo insuficiente para saque.");
-        } else {
-            account.balance -= amount;
-            account.history.push(`Saque de R$${amount} realizado com sucesso!`);
-            console.log(`Saque de R$${amount} realizado com sucesso!`);
-        }
+    let account = findAccount(accountNumber);
+    if (account === null) {
+        console.log("Conta não encontrada.");
+    } else if (!Number.isFinite(amount) || amount <= 0) {
+        console.log("Valor inválido para saque.");
+        return;
+    } else if (amount > account.balance) {
+        console.log("Saldo insuficiente para saque.");
+    } else {
+        account.balance -= amount;
+        account.history.push(`Saque de R$${amount} realizado com sucesso!`);
+        console.log(`Saque de R$${amount} realizado com sucesso!`);
     }
+}
 function transfer(accountNumberOrigin, accountNumberDestination, amount) {
     let sourceAccount = findAccount(accountNumberOrigin);
     let destinationAccount = findAccount(accountNumberDestination);
     if (sourceAccount === null) {
         console.log("Conta de origem não encontrada.");
-    } else if (amount <= 0) {
+    } else if (!Number.isFinite(amount) || amount <= 0) {
         console.log("Valor inválido para transferência.");
+        return;
     } else if (amount > sourceAccount.balance) {
         console.log("Saldo insuficiente para transferência.");
     } else {
@@ -47,6 +51,6 @@ function transfer(accountNumberOrigin, accountNumberDestination, amount) {
             console.log(`Transferência de R$${amount} realizada com sucesso!`);
         }
     }
- }
+}
 
 export { deposit, withdraw, transfer };
