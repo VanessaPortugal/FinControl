@@ -39,6 +39,13 @@ O projeto evolui de forma incremental por meio de Sprints, simulando o desenvolv
 - Encerramento do sistema
 - Padronização do código em inglês
 
+### 🚧 Sprint 3 — Validações e Novas Operações
+
+- Validação de valores não numéricos em depósitos, saques e transferências
+- Bloqueio de valores iguais ou menores que zero
+- Proteção do saldo contra valores `NaN`
+- Prevenção do registro de operações inválidas no histórico
+
 ---
 
 ## ▶️ Como executar
@@ -86,8 +93,8 @@ FinControl/
 
 - `index.js`: controla o fluxo do programa e os menus.
 - `data.js`: armazena e localiza as contas.
-- `account.js`: contém as operações bancárias.
-- `interface.js`: exibe as informações e o histórico.
+- `account.js`: contém as operações bancárias e suas validações.
+- `interface.js`: exibe as informações da conta e o histórico de transações.
 - `assets.js`: arquivo reservado para futuros recursos auxiliares do sistema.
 
 ---
@@ -116,14 +123,19 @@ Ao encerrar o programa, os dados são apagados. A persistência em arquivo JSON 
 - Integração das operações com o menu
 - Logout e encerramento do sistema
 
-### 🔮 Sprint 3 — Novas Operações Bancárias
+### 🚧 Sprint 3 — Validações e Novas Operações Bancárias
 
-- Pix
-- Pagamento de contas
-- Extrato bancário
-- Estorno de transações
-- Listagem de contas
-- Novas validações de entrada
+- [x] Validação de valores não numéricos
+- [x] Bloqueio de valores iguais ou menores que zero
+- [x] Proteção do saldo contra valores `NaN`
+- [x] Proteção do histórico contra operações inválidas
+- [ ] Ajuste da ordem das validações de transferência
+- [ ] Pix
+- [ ] Pagamento de contas
+- [ ] Extrato bancário
+- [ ] Estorno de transações
+- [ ] Listagem de contas
+- [ ] Outras validações de entrada
 
 ### 🔮 Sprint 4 — Persistência de Dados
 
@@ -213,6 +225,13 @@ Este projeto está licenciado sob a licença MIT. Consulte o arquivo `LICENSE` p
 - System shutdown
 - Code standardized in English
 
+### 🚧 Sprint 3 — Validation and New Banking Operations
+
+- Validation of non-numeric values in deposits, withdrawals and transfers
+- Blocking values equal to or less than zero
+- Balance protection against `NaN` values
+- Prevention of invalid operations being added to the transaction history
+
 ---
 
 ## ▶️ How to Run
@@ -260,9 +279,9 @@ FinControl/
 
 - `index.js`: controls the application flow and menus.
 - `data.js`: stores and searches for accounts.
-- `account.js`: contains the banking operations.
+- `account.js`: contains banking operations and their validations.
 - `interface.js`: displays account information and transaction history.
-- `assets.js`: File reserved for future system auxiliary resources.
+- `assets.js`: file reserved for future auxiliary system resources.
 
 ---
 
@@ -290,14 +309,19 @@ When the application is closed, all data is lost. JSON data persistence will be 
 - Banking operations integrated with the menu
 - Logout and system shutdown
 
-### 🔮 Sprint 3 — New Banking Operations
+### 🚧 Sprint 3 — Validation and New Banking Operations
 
-- Pix
-- Bill payment
-- Bank statement
-- Transaction reversal
-- Account listing
-- Additional input validations
+- [x] Non-numeric value validation
+- [x] Blocking values equal to or less than zero
+- [x] Balance protection against `NaN` values
+- [x] Transaction history protection against invalid operations
+- [ ] Transfer validation order adjustment
+- [ ] Pix
+- [ ] Bill payment
+- [ ] Bank statement
+- [ ] Transaction reversal
+- [ ] Account listing
+- [ ] Additional input validations
 
 ### 🔮 Sprint 4 — Data Persistence
 
