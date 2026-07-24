@@ -1,5 +1,5 @@
 import { createAccount, findAccount } from "./data.js";
-import { deposit, withdraw, transfer } from "./account.js";
+import { deposit, withdraw, transfer, pix } from "./account.js";
 import { showHeader, showAccount, showHistory } from "./interface.js";
 
 import readline from "node:readline/promises";
@@ -56,9 +56,10 @@ async function main() {
         1. Depositar
         2. Sacar
         3. Transferir
-        4. Consultar conta
-        5. Consultar histórico
-        6. Logout
+        4. PIX
+        5. Consultar conta
+        6. Consultar histórico
+        7. Logout
 
         Escolha uma opção:
 `);
@@ -69,10 +70,10 @@ async function main() {
 
                         deposit(account.accountNumber, amount);
                     } else if (accountOption === "2") {
-                        let withdrawAmount = await rl.question("Digite o valor do saque: R$")
+                        let withdrawAmount = await rl.question("Digite o valor do saque: R$");
 
                         withdrawAmount = parseFloat(withdrawAmount);
-                        withdraw(account.accountNumber, withdrawAmount)
+                        withdraw(account.accountNumber, withdrawAmount);
                     } else if (accountOption === "3") {
                         let destinationAccount = await rl.question("Digite a conta que receberá o valor:");
                         destinationAccount = parseInt(destinationAccount);
@@ -82,12 +83,20 @@ async function main() {
                         transferAmount = parseFloat(transferAmount);
 
                         transfer(account.accountNumber, destinationAccount, transferAmount);
-
                     } else if (accountOption === "4") {
-                        showAccount(account);
+
+                        let destinationAccount = await rl.question("Digite a conta que receberá o valor:");
+                        destinationAccount = parseInt(destinationAccount);
+
+                        let pixAmount = await rl.question("Digite o valor do PIX: R$");
+
+                        pixAmount = parseFloat(pixAmount);
+                        pix(account.accountNumber, destinationAccount, pixAmount);
                     } else if (accountOption === "5") {
-                        showHistory(account);
+                        showAccount(account);
                     } else if (accountOption === "6") {
+                        showHistory(account);
+                    } else if (accountOption === "7") {
 
                         console.log("Logout realizado.");
                         break;
