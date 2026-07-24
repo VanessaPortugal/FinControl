@@ -41,10 +41,15 @@ O projeto evolui de forma incremental por meio de Sprints, simulando o desenvolv
 
 ### 🚧 Sprint 3 — Validações e Novas Operações
 
-- Validação de valores não numéricos em depósitos, saques e transferências
+- Validação de valores não numéricos em depósitos, saques, transferências e Pix
 - Bloqueio de valores iguais ou menores que zero
 - Proteção do saldo contra valores `NaN`
 - Prevenção do registro de operações inválidas no histórico
+- Verificação da conta de destino antes da validação de saldo
+- Envio de Pix entre contas
+- Registro do Pix no histórico da conta de origem
+- Registro do Pix recebido no histórico da conta de destino
+- Integração do Pix ao menu interativo
 
 ---
 
@@ -91,8 +96,8 @@ FinControl/
 
 ### Responsabilidade dos principais arquivos
 
-- `index.js`: controla o fluxo do programa e os menus.
-- `data.js`: armazena e localiza as contas.
+- `index.js`: controla o fluxo do programa, o login e os menus interativos.
+- `data.js`: armazena, cria e localiza as contas.
 - `account.js`: contém as operações bancárias e suas validações.
 - `interface.js`: exibe as informações da conta e o histórico de transações.
 - `assets.js`: arquivo reservado para futuros recursos auxiliares do sistema.
@@ -104,6 +109,8 @@ FinControl/
 As contas e transações são armazenadas apenas na memória durante a execução.
 
 Ao encerrar o programa, os dados são apagados. A persistência em arquivo JSON será implementada em uma Sprint futura.
+
+O login utiliza apenas o número da conta. Autenticação por senha será implementada posteriormente.
 
 ---
 
@@ -129,12 +136,16 @@ Ao encerrar o programa, os dados são apagados. A persistência em arquivo JSON 
 - [x] Bloqueio de valores iguais ou menores que zero
 - [x] Proteção do saldo contra valores `NaN`
 - [x] Proteção do histórico contra operações inválidas
-- [ ] Ajuste da ordem das validações de transferência
-- [ ] Pix
+- [x] Ajuste da ordem das validações de transferência
+- [x] Implementação do Pix
+- [x] Integração do Pix ao menu
+- [x] Registro do Pix nos históricos de origem e destino
+- [ ] Bloqueio de transferência e Pix para a própria conta
 - [ ] Pagamento de contas
 - [ ] Extrato bancário
 - [ ] Estorno de transações
 - [ ] Listagem de contas
+- [ ] Formatação monetária em reais
 - [ ] Outras validações de entrada
 
 ### 🔮 Sprint 4 — Persistência de Dados
@@ -227,10 +238,15 @@ Este projeto está licenciado sob a licença MIT. Consulte o arquivo `LICENSE` p
 
 ### 🚧 Sprint 3 — Validation and New Banking Operations
 
-- Validation of non-numeric values in deposits, withdrawals and transfers
+- Validation of non-numeric values in deposits, withdrawals, transfers and Pix
 - Blocking values equal to or less than zero
 - Balance protection against `NaN` values
 - Prevention of invalid operations being added to the transaction history
+- Destination account validation before the balance check
+- Pix transfers between accounts
+- Pix registration in the sender's transaction history
+- Pix registration in the recipient's transaction history
+- Pix integration with the interactive menu
 
 ---
 
@@ -277,19 +293,21 @@ FinControl/
 
 ### Main file responsibilities
 
-- `index.js`: controls the application flow and menus.
-- `data.js`: stores and searches for accounts.
+- `index.js`: controls the application flow, login and interactive menus.
+- `data.js`: stores, creates and searches for accounts.
 - `account.js`: contains banking operations and their validations.
 - `interface.js`: displays account information and transaction history.
 - `assets.js`: file reserved for future auxiliary system resources.
 
 ---
 
-## ⚠️ Current Limitation
+## ⚠️ Current Limitations
 
 Accounts and transactions are currently stored only in memory while the application is running.
 
 When the application is closed, all data is lost. JSON data persistence will be implemented in a future Sprint.
+
+Login currently uses only the account number. Password authentication will be implemented later.
 
 ---
 
@@ -315,12 +333,16 @@ When the application is closed, all data is lost. JSON data persistence will be 
 - [x] Blocking values equal to or less than zero
 - [x] Balance protection against `NaN` values
 - [x] Transaction history protection against invalid operations
-- [ ] Transfer validation order adjustment
-- [ ] Pix
+- [x] Transfer validation order adjustment
+- [x] Pix implementation
+- [x] Pix integration with the menu
+- [x] Pix registration in sender and recipient histories
+- [ ] Blocking transfers and Pix to the same account
 - [ ] Bill payment
 - [ ] Bank statement
 - [ ] Transaction reversal
 - [ ] Account listing
+- [ ] Brazilian currency formatting
 - [ ] Additional input validations
 
 ### 🔮 Sprint 4 — Data Persistence
